@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="payeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="StorePTblurchases">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_kala" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Number" Type="int" Nullable="false" />
+          <Property Name="PriceBuy" Type="bigint" Nullable="false" />
+          <Property Name="PriceSell" Type="bigint" Nullable="false" />
+          <Property Name="Mark" Type="nvarchar" MaxLength="150" />
+          <Property Name="SerialNumber" Type="char" MaxLength="100" />
+          <Property Name="installment" Type="int" Nullable="false" />
+          <Property Name="Price" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblBuy">
+          <Key>
+            <PropertyRef Name="Record" />
+          </Key>
+          <Property Name="Record" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SerialBuy" Type="char" MaxLength="300" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="bigint" Nullable="false" />
+          <Property Name="DateTime_Buy" Type="datetime" Nullable="false" />
+          <Property Name="Installments" Type="int" Nullable="false" />
+          <Property Name="Type_Buy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prepayment" Type="bigint" />
+          <Property Name="Check_number1" Type="char" MaxLength="50" />
+          <Property Name="Date_Check1" Type="datetime" />
+          <Property Name="Check_number2" Type="char" MaxLength="50" />
+          <Property Name="Date_Check2" Type="datetime" />
+          <Property Name="Check_number3" Type="char" MaxLength="50" />
+          <Property Name="Date_Check3" Type="datetime" />
+          <Property Name="Check_number4" Type="nchar" MaxLength="50" />
+          <Property Name="Date_Check4" Type="datetime" />
+          <Property Name="Check_number5" Type="nchar" MaxLength="50" />
+          <Property Name="Date_Check5" Type="datetime" />
+          <Property Name="Check_number6" Type="char" MaxLength="50" />
+          <Property Name="Date_Check6" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TblBuyKala">
+          <Key>
+            <PropertyRef Name="Record" />
+          </Key>
+          <Property Name="Record" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name_kala" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Number" Type="int" Nullable="false" />
+          <Property Name="Price" Type="bigint" Nullable="false" />
+          <Property Name="SerialBuy" Type="char" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblCreditor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_Customer" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TblDebtor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_Customer" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TblForooshgah">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KalaName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mojudi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="TblKomod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KomodNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Customer" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view '4paye.dbo.TblPurchaseRecords' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblPurchaseRecords">
+          <Key>
+            <PropertyRef Name="ID" />
+            
+            <PropertyRef Name="Name_Customer" />
+            <PropertyRef Name="Amount" />
+            <PropertyRef Name="DateTime" />
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="MeliCode" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Name_Customer" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblTarakonesh">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TarakoneshDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TarakoneshKind" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustomerID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MeliCode" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BirthDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OzviatDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EtebarDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Komod" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="payeModelStoreContainer">
+          <EntitySet Name="StorePTblurchases" EntityType="Self.StorePTblurchases" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblBuy" EntityType="Self.TblBuy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblBuyKala" EntityType="Self.TblBuyKala" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCreditor" EntityType="Self.TblCreditor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblDebtor" EntityType="Self.TblDebtor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblForooshgah" EntityType="Self.TblForooshgah" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblKomod" EntityType="Self.TblKomod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblTarakonesh" EntityType="Self.TblTarakonesh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblUser" EntityType="Self.TblUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblPurchaseRecords" EntityType="Self.TblPurchaseRecords" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TblPurchaseRecords].[ID] AS [ID], 
+    [TblPurchaseRecords].[MeliCode] AS [MeliCode], 
+    [TblPurchaseRecords].[Name_Customer] AS [Name_Customer], 
+    [TblPurchaseRecords].[Amount] AS [Amount], 
+    [TblPurchaseRecords].[DateTime] AS [DateTime], 
+    [TblPurchaseRecords].[Type] AS [Type]
+    FROM [dbo].[TblPurchaseRecords] AS [TblPurchaseRecords]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="payeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblForooshgah">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KalaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mojudi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblKomod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KomodNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblTarakonesh">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TarakoneshDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TarakoneshKind" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustomerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OzviatDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EtebarDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Komod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TblPurchaseRecords" Relationship="payeModel.FK_TblPurchaseRecords_TblUser" FromRole="TblUser" ToRole="TblPurchaseRecord" />
+          <Property Name="MeliCode" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Entities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblForooshgahs" EntityType="Self.TblForooshgah" />
+          <EntitySet Name="TblKomods" EntityType="Self.TblKomod" />
+          <EntitySet Name="TblTarakoneshes" EntityType="Self.TblTarakonesh" />
+          <EntitySet Name="TblUsers" EntityType="Self.TblUser" />
+          <EntitySet Name="TblCreditors" EntityType="payeModel.TblCreditor" />
+          <EntitySet Name="TblDebtors" EntityType="payeModel.TblDebtor" />
+          <EntitySet Name="TblPurchaseRecords" EntityType="payeModel.TblPurchaseRecord" />
+          <AssociationSet Name="FK_TblPurchaseRecords_TblUser" Association="payeModel.FK_TblPurchaseRecords_TblUser">
+            <End Role="TblUser" EntitySet="TblUsers" />
+            <End Role="TblPurchaseRecord" EntitySet="TblPurchaseRecords" />
+          </AssociationSet>
+          <EntitySet Name="TblBuys" EntityType="payeModel.TblBuy" />
+          <EntitySet Name="TblBuyKalas" EntityType="payeModel.TblBuyKala" />
+          <EntitySet Name="StorePTblurchases" EntityType="payeModel.StorePTblurchas" />
+        </EntityContainer>
+        <EntityType Name="TblCreditor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_Customer" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblDebtor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_Customer" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblPurchaseRecord">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name_Customer" />
+            <PropertyRef Name="Amount" />
+            <PropertyRef Name="DateTime" />
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name_Customer" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblUser" Relationship="payeModel.FK_TblPurchaseRecords_TblUser" FromRole="TblPurchaseRecord" ToRole="TblUser" />
+          <Property Name="MeliCode" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_TblPurchaseRecords_TblUser">
+          <End Type="payeModel.TblUser" Role="TblUser" Multiplicity="1" />
+          <End Type="payeModel.TblPurchaseRecord" Role="TblPurchaseRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblUser">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblPurchaseRecord">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TblBuy">
+          <Key>
+            <PropertyRef Name="Record" />
+          </Key>
+          <Property Name="Record" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int64" Nullable="false" />
+          <Property Name="DateTime_Buy" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Installments" Type="Int32" Nullable="false" />
+          <Property Name="Type_Buy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prepayment" Type="Int64" />
+          <Property Name="Check_number1" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Date_Check1" Type="DateTime" Precision="3" />
+          <Property Name="Check_number2" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Date_Check2" Type="DateTime" Precision="3" />
+          <Property Name="Check_number3" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Date_Check3" Type="DateTime" Precision="3" />
+          <Property Name="Check_number4" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Date_Check4" Type="DateTime" Precision="3" />
+          <Property Name="Check_number5" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Date_Check5" Type="DateTime" Precision="3" />
+          <Property Name="Check_number6" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Date_Check6" Type="DateTime" Precision="3" />
+          <Property Name="SerialBuy" Type="String" Nullable="false" MaxLength="300" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblBuyKala">
+          <Key>
+            <PropertyRef Name="Record" />
+          </Key>
+          <Property Name="Record" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name_kala" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Number" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Int64" Nullable="false" />
+          <Property Name="SerialBuy" Type="String" Nullable="false" MaxLength="300" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="StorePTblurchas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_kala" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Number" Type="Int32" Nullable="false" />
+          <Property Name="PriceBuy" Type="Int64" Nullable="false" />
+          <Property Name="PriceSell" Type="Int64" Nullable="false" />
+          <Property Name="Mark" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumber" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="installment" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Int64" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="payeModelStoreContainer" CdmEntityContainer="Entities3">
+          <EntitySetMapping Name="TblForooshgahs">
+            <EntityTypeMapping TypeName="payeModel.TblForooshgah">
+              <MappingFragment StoreEntitySet="TblForooshgah">
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KalaName" ColumnName="KalaName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Mojudi" ColumnName="Mojudi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblKomods">
+            <EntityTypeMapping TypeName="payeModel.TblKomod">
+              <MappingFragment StoreEntitySet="TblKomod">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KomodNum" ColumnName="KomodNum" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblTarakoneshes">
+            <EntityTypeMapping TypeName="payeModel.TblTarakonesh">
+              <MappingFragment StoreEntitySet="TblTarakonesh">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TarakoneshDate" ColumnName="TarakoneshDate" />
+                <ScalarProperty Name="TarakoneshKind" ColumnName="TarakoneshKind" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblUsers">
+            <EntityTypeMapping TypeName="payeModel.TblUser">
+              <MappingFragment StoreEntitySet="TblUser">
+                <ScalarProperty Name="MeliCode" ColumnName="MeliCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="OzviatDate" ColumnName="OzviatDate" />
+                <ScalarProperty Name="EtebarDate" ColumnName="EtebarDate" />
+                <ScalarProperty Name="Komod" ColumnName="Komod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCreditors">
+            <EntityTypeMapping TypeName="payeModel.TblCreditor">
+              <MappingFragment StoreEntitySet="TblCreditor">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Name_Customer" ColumnName="Name_Customer" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblDebtors">
+            <EntityTypeMapping TypeName="payeModel.TblDebtor">
+              <MappingFragment StoreEntitySet="TblDebtor">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Name_Customer" ColumnName="Name_Customer" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblPurchaseRecords">
+            <EntityTypeMapping TypeName="payeModel.TblPurchaseRecord">
+              <MappingFragment StoreEntitySet="TblPurchaseRecords">
+                <ScalarProperty Name="MeliCode" ColumnName="MeliCode" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Name_Customer" ColumnName="Name_Customer" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblBuys">
+            <EntityTypeMapping TypeName="payeModel.TblBuy">
+              <MappingFragment StoreEntitySet="TblBuy">
+                <ScalarProperty Name="SerialBuy" ColumnName="SerialBuy" />
+                <ScalarProperty Name="Date_Check6" ColumnName="Date_Check6" />
+                <ScalarProperty Name="Check_number6" ColumnName="Check_number6" />
+                <ScalarProperty Name="Date_Check5" ColumnName="Date_Check5" />
+                <ScalarProperty Name="Check_number5" ColumnName="Check_number5" />
+                <ScalarProperty Name="Date_Check4" ColumnName="Date_Check4" />
+                <ScalarProperty Name="Check_number4" ColumnName="Check_number4" />
+                <ScalarProperty Name="Date_Check3" ColumnName="Date_Check3" />
+                <ScalarProperty Name="Check_number3" ColumnName="Check_number3" />
+                <ScalarProperty Name="Date_Check2" ColumnName="Date_Check2" />
+                <ScalarProperty Name="Check_number2" ColumnName="Check_number2" />
+                <ScalarProperty Name="Date_Check1" ColumnName="Date_Check1" />
+                <ScalarProperty Name="Check_number1" ColumnName="Check_number1" />
+                <ScalarProperty Name="Prepayment" ColumnName="Prepayment" />
+                <ScalarProperty Name="Type_Buy" ColumnName="Type_Buy" />
+                <ScalarProperty Name="Installments" ColumnName="Installments" />
+                <ScalarProperty Name="DateTime_Buy" ColumnName="DateTime_Buy" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Record" ColumnName="Record" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblBuyKalas">
+            <EntityTypeMapping TypeName="payeModel.TblBuyKala">
+              <MappingFragment StoreEntitySet="TblBuyKala">
+                <ScalarProperty Name="SerialBuy" ColumnName="SerialBuy" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Name_kala" ColumnName="Name_kala" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Record" ColumnName="Record" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StorePTblurchases">
+            <EntityTypeMapping TypeName="payeModel.StorePTblurchas">
+              <MappingFragment StoreEntitySet="StorePTblurchases">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="installment" ColumnName="installment" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Mark" ColumnName="Mark" />
+                <ScalarProperty Name="PriceSell" ColumnName="PriceSell" />
+                <ScalarProperty Name="PriceBuy" ColumnName="PriceBuy" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Name_kala" ColumnName="Name_kala" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

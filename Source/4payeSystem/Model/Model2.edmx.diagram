@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a005a2caff394470bc0bfcc3da17f304" Name="Diagram1">
+        <EntityTypeShape EntityType="payeModel.TblForooshgah" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="payeModel.TblKomod" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="payeModel.TblTarakonesh" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="payeModel.TblUser" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="payeModel.TblCreditor" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="payeModel.TblDebtor" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="payeModel.TblPurchaseRecord" Width="1.5" PointX="5" PointY="3.875" />
+        <AssociationConnector Association="payeModel.FK_TblPurchaseRecords_TblUser" />
+        <EntityTypeShape EntityType="payeModel.TblBuy" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="payeModel.TblBuyKala" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="payeModel.StorePTblurchas" Width="1.5" PointX="7.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E68ABEC0-621B-48BC-A7D6-876E9FEDEE66}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>_4payeSystem</RootNamespace>
+    <AssemblyName>4payeSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Core, Version=1.9.0.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\tool\Bunifu.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\Tools\Bunifu.UI.Form.1.﻿9.0.1_YasDL.com\Bunifu UI WinForms 1.9.0.1\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="DateTimeSelector">
+      <HintPath>..\tool\DateTimeSelector.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.Instrumentation, Version=14.1.0.37, Culture=neutral, PublicKeyToken=f90dc37c26666a67" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=2022.2.18.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FastReport.Bars, Version=2022.2.18.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FastReport.Compat, Version=2022.2.0.0, Culture=neutral, PublicKeyToken=406e1f4c3c8ef97e">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FastReport.DataVisualization, Version=2022.2.0.0, Culture=neutral, PublicKeyToken=406e1f4c3c8ef97e">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FastReport.Editor, Version=2022.2.18.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign.resources, Version=12.0.0.0, Culture=de, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.ReportViewer.WebDesign.resources\v4.0_12.0.0.0_zh-Hant_89845dcd8080cc91\Microsoft.ReportViewer.WebDesign.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms.resources, Version=12.0.0.0, Culture=de, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.ReportViewer.WinForms.resources\v4.0_12.0.0.0_es_89845dcd8080cc91\Microsoft.ReportViewer.WinForms.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2014.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a" />
+    <Reference Include="Stimulsoft.Controls.Win, Version=2014.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\tool\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2014.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report.Win, Version=2014.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Hesabdari\Accounting\Accounting_App\bin\Debug\Stimulsoft.Report.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounting\frmAccounting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\frmAccounting.Designer.cs">
+      <DependentUpon>frmAccounting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\ReportViewModelSell.cs" />
+    <Compile Include="Accounting\ReportViewModelWarehouse.cs" />
+    <Compile Include="Accounting\WarehouseAuditSell.cs" />
+    <Compile Include="Accounting\WarehouseAuditStore.cs" />
+    <Compile Include="BarCodeCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Buy.cs" />
+    <Compile Include="BuyKala.cs" />
+    <Compile Include="CalculateThePrice.cs" />
+    <Compile Include="Convertor\Convertor.cs" />
+    <Compile Include="frmCheckInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheckInfo.Designer.cs">
+      <DependentUpon>frmCheckInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\StorePTblurchas.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Print\PrintReport.cs" />
+    <Compile Include="ReplaceNumber.cs" />
+    <Compile Include="Customer\frmSetCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\frmSetCustomer.Designer.cs">
+      <DependentUpon>frmSetCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Installment\frmCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Installment\frmCheck.Designer.cs">
+      <DependentUpon>frmCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Installment\frmInstallment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Installment\frmInstallment.Designer.cs">
+      <DependentUpon>frmInstallment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Info\FrmDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Info\FrmDetails.Designer.cs">
+      <DependentUpon>FrmDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterestPercentageInterview.cs" />
+    <Compile Include="ListOfAccounts\frmCreditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfAccounts\frmCreditor.Designer.cs">
+      <DependentUpon>frmCreditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfAccounts\frmDebtor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfAccounts\frmDebtor.Designer.cs">
+      <DependentUpon>frmDebtor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager Shop\FrmForooshGah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager Shop\FrmForooshGah.Designer.cs">
+      <DependentUpon>FrmForooshGah.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Info\FrmInffo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Info\FrmInffo.Designer.cs">
+      <DependentUpon>FrmInffo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager Shop\frmSabtKharid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager Shop\frmSabtKharid.Designer.cs">
+      <DependentUpon>frmSabtKharid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Message\FrmMesssage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Message\FrmMesssage.Designer.cs">
+      <DependentUpon>FrmMesssage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\FrmSabtNam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\FrmSabtNam.Designer.cs">
+      <DependentUpon>FrmSabtNam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager Shop\FrmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager Shop\FrmHistory.Designer.cs">
+      <DependentUpon>FrmHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\FrmUserEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit\FrmUserEdit.Designer.cs">
+      <DependentUpon>FrmUserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\FrmUserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\FrmUserManagement.Designer.cs">
+      <DependentUpon>FrmUserManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.cs" />
+    <Compile Include="Model\Model2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TblBuy.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TblBuyKala.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TblCreditor.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TblDebtor.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TblForooshgah.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TblKomod.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TblPurchaseRecord.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TblTarakonesh.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TblUser.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SetMojoodiKala.cs" />
+    <Compile Include="Store purchases\frmStorePurchases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Store purchases\frmStorePurchases.Designer.cs">
+      <DependentUpon>frmStorePurchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubmitBuyUserToDb.cs" />
+    <Compile Include="SubmitCheckNumberToDb.cs" />
+    <Compile Include="SubmitKalaToDb.cs" />
+    <EmbeddedResource Include="Accounting\frmAccounting.resx">
+      <DependentUpon>frmAccounting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\frmSetCustomer.resx">
+      <DependentUpon>frmSetCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckInfo.resx">
+      <DependentUpon>frmCheckInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Installment\frmCheck.resx">
+      <DependentUpon>frmCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Installment\frmInstallment.resx">
+      <DependentUpon>frmInstallment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Info\FrmDetails.resx">
+      <DependentUpon>FrmDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfAccounts\frmCreditor.resx">
+      <DependentUpon>frmCreditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfAccounts\frmDebtor.resx">
+      <DependentUpon>frmDebtor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager Shop\FrmForooshGah.resx">
+      <DependentUpon>FrmForooshGah.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Info\FrmInffo.resx">
+      <DependentUpon>FrmInffo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager Shop\frmSabtKharid.resx">
+      <DependentUpon>frmSabtKharid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Message\FrmMesssage.resx">
+      <DependentUpon>FrmMesssage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\FrmSabtNam.resx">
+      <DependentUpon>FrmSabtNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager Shop\FrmHistory.resx">
+      <DependentUpon>FrmHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit\FrmUserEdit.resx">
+      <DependentUpon>FrmUserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\FrmUserManagement.resx">
+      <DependentUpon>FrmUserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Store purchases\frmStorePurchases.resx">
+      <DependentUpon>frmStorePurchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\Model2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\Model2.edmx.diagram">
+      <DependentUpon>Model2.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-list-add-user-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2Recycle Bin Empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit-Male-User-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Users-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User-Files-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-document-edit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-list-add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop-cart-apply-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookmark-add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1047.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1119.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0457.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0455.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-list-add-user-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0457 copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\04551.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apps-preferences-contact-list-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <Content Include="Model\Model2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model2.edmx</DependentUpon>
+      <LastGenOutput>Model2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Model2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model2.edmx</DependentUpon>
+      <LastGenOutput>Model2.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\18.jpg" />
+    <None Include="Resources\15.jpg" />
+    <None Include="Resources\12.jpg" />
+    <None Include="Resources\10.jpg" />
+    <None Include="Resources\6.jpg" />
+    <None Include="Resources\5.jpg" />
+    <None Include="Resources\4.jpg" />
+    <None Include="Resources\1.jpg" />
+    <None Include="Resources\wsecedit_dll_05_13.png" />
+    <None Include="Resources\workstation-locked-Vista-icon.png" />
+    <None Include="Resources\Windows-Live-Gallery-icon.png" />
+    <None Include="Resources\wab32res_dll_10_13.png" />
+    <None Include="Resources\wab32res_dll_01_13.png" />
+    <None Include="Resources\wab32_dll_01_22.png" />
+    <None Include="Resources\wab_exe_10_13.png" />
+    <None Include="Resources\wab_exe_09_13.png" />
+    <None Include="Resources\wab_exe_08_13.png" />
+    <None Include="Resources\wab_exe_05_13.png" />
+    <None Include="Resources\Vista Notepad.png" />
+    <None Include="Resources\Users-Edit-User-icon.png" />
+    <None Include="Resources\trash-icon.png" />
+    <None Include="Resources\systemcpl_dll_01_14.png" />
+    <None Include="Resources\sysmain_dll_01_10.png" />
+    <None Include="Resources\srchadmin_dll_01_13.png" />
+    <None Include="Resources\shopping-icon.png" />
+    <None Include="Resources\shopping-bag-icon.png" />
+    <None Include="Resources\shop-cart-icon.png" />
+    <None Include="Resources\SEO-icon.png" />
+    <None Include="Resources\Search-icon.png" />
+    <None Include="Resources\search-b-icon.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\Refresh-icon.png" />
+    <None Include="Resources\printer-icon.png" />
+    <None Include="Resources\Places-trash-full-icon.png" />
+    <None Include="Resources\payment-icon.png" />
+    <None Include="Resources\OnLineIDCpl_dll_02_13.png" />
+    <None Include="Resources\Office-Customer-Male-Light-icon.png" />
+    <None Include="Resources\Notepad2.png" />
+    <None Include="Resources\My Computer Vista.png" />
+    <None Include="Resources\MSOERES_dll_01_22.png" />
+    <None Include="Resources\money-wallet-icon.png" />
+    <None Include="Resources\keyring_dll_04_10.png" />
+    <None Include="Resources\irprops_cpl_01_13.png" />
+    <None Include="Resources\imageres_dll_207_18.png" />
+    <None Include="Resources\imageres_dll_193_18.png" />
+    <None Include="Resources\imageres_dll_168_13.png" />
+    <None Include="Resources\imageres_dll_007_10.png" />
+    <None Include="Resources\icardres_dll_10_13.png" />
+    <None Include="Resources\glossy-3d-blue-hourglass-icon.png" />
+    <None Include="Resources\globe-Vista-icon.png" />
+    <None Include="Resources\Filter-List-icon.png" />
+    <None Include="Resources\Files-Edit-file-icon.png" />
+    <None Include="Resources\Files-Add-List-icon.png" />
+    <None Include="Resources\FAQ-icon.png" />
+    <None Include="Resources\Elan Icon 20.png" />
+    <None Include="Resources\Elan Icon 18.png" />
+    <None Include="Resources\Elan Icon 15.png" />
+    <None Include="Resources\document-scroll-icon.png" />
+    <None Include="Resources\document-help-icon.png" />
+    <None Include="Resources\Delete-user-icon.png" />
+    <None Include="Resources\Control Panel.png" />
+    <None Include="Resources\Comment-add-icon.png" />
+    <None Include="Resources\coin-add-icon.png" />
+    <None Include="Resources\Coffee-Shop-icon.png" />
+    <None Include="Resources\checklist-icon.png" />
+    <None Include="Resources\Cash-register-icon.png" />
+    <None Include="Resources\Calendar-icon.png" />
+    <None Include="Resources\Business-Expired-icon.png" />
+    <None Include="Resources\Box Vista Ultimate Disc.ico" />
+    <None Include="Resources\Alarm-Tick-icon.png" />
+    <None Include="Resources\Alarm-Error-icon.png" />
+    <None Include="Resources\administrator-icon.png" />
+    <None Include="Resources\admin-icon.png" />
+    <None Include="Resources\add-event-icon.png" />
+    <None Include="Resources\Actions-list-remove-user-icon.png" />
+    <None Include="Resources\Actions-edit-find-user-icon.png" />
+    <None Include="Resources\Actions-document-print-icon.png" />
+    <None Include="Resources\7931.png" />
+    <None Include="Resources\7856.png" />
+    <None Include="Resources\7851.png" />
+    <None Include="Resources\7748.png" />
+    <None Include="Resources\1476.png" />
+    <None Include="Resources\1249.png" />
+    <None Include="Resources\1215.png" />
+    <None Include="Resources\1147.png" />
+    <None Include="Resources\1052.png" />
+    <None Include="Resources\0615.png" />
+    <None Include="Resources\0269.png" />
+    <None Include="Resources\0225.png" />
+    <None Include="Resources\0125.png" />
+    <None Include="Resources\0036.png" />
+    <None Include="Resources\0024.png" />
+    <None Include="Resources\2Recycle Bin Full.png" />
+    <None Include="Resources\wucltux_dll_10_09.png" />
+    <None Include="Resources\Details1.jpg" />
+    <None Include="Resources\Details.jpg" />
+    <None Include="Resources\inffo.jpg" />
+    <None Include="Resources\Recycle-Bin-Full-icon.png" />
+    <None Include="Resources\edit-icon1.png" />
+    <None Include="Resources\1483.png" />
+    <None Include="Resources\1075.png" />
+    <None Include="Resources\1077.png" />
+    <None Include="Resources\Alarm-Help-and-Support-icon.png" />
+    <None Include="Resources\LXP_Everest.png" />
+    <None Include="Resources\1112.png" />
+    <None Include="Resources\17.jpg" />
+    <None Include="Resources\11.jpg" />
+    <None Include="Resources\Actions-contact-new-icon1.png" />
+    <None Include="Resources\Actions-contact-new-icon.png" />
+    <None Include="Resources\Users-Add-User-icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
